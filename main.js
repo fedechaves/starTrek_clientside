@@ -7,14 +7,14 @@ async function apiRequest(){
         const data = await response.json()
         console.log(data)
 
-        document.getElementById('alienName').innerText = data.speciesName
-        document.getElementById('alienWorld').innerText = data.homeworld
-        document.getElementById('alienFeatures').innerText = data.features
-        document.getElementById('alienFacts').innerText = data.facts
-        document.getElementById('alienExamples').innerText = data.examples
+        document.getElementById('alienName').innerText = data[0].speciesName
+        document.getElementById('alienWorld').innerText = data[0].homeworld
+        document.getElementById('alienFeatures').innerText = data[0].features
+        document.getElementById('alienFacts').innerText = data[0].facts
+        document.getElementById('alienExamples').innerText = data[0].examples
 
-        document.getElementById('alienImage').src = data.image
-        document.getElementById('alienCaption').innerText = data.speciesName
+        document.getElementById('alienImage').src = data[0].image
+        document.getElementById('alienCaption').innerText = data[0].speciesName
     } catch {
         console.log(error)
     }
